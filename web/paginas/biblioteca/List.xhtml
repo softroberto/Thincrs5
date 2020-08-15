@@ -22,7 +22,7 @@
                     <p:fieldset>
 
                     <h:commandLink action="#{bibliotecaController.next}" value="#{bundle.Next} #{bibliotecaController.pagination.pageSize}" rendered="#{bibliotecaController.pagination.hasNextPage}"/>&nbsp;
-                    <p:dataTable value="#{bibliotecaController.items}" >
+                    <p:dataTable value="#{bibliotecaController.items}" var="item" >
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListBibliotecaTitle_entrada}"/>
@@ -68,7 +68,7 @@
                 <h:commandLink action="#{bibliotecaController.prepareCreate}" value="#{bundle.ListBibliotecaCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListBibliotecaIndexLink}"/>
+                <h:link outcome="/paginas/admin/principal" value="#{bundle.ListBibliotecaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

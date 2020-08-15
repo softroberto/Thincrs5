@@ -79,8 +79,9 @@ private Usuario id;
     }
     
     
-    public String comprobar(){
-       id2 = id.getId();
+    public void comprobar(){
+        try {
+               id2 = id.getId();
         if(getFacade().usaurioExist(id2)){
              current= getFacade().autenticar(id);
         if(current!=null){
@@ -88,14 +89,14 @@ private Usuario id;
                 LocalDateTime ob = LocalDateTime.now();               
                 current.setSalida(convertToDateViaSqlTimestamp(ob));
                 getFacade().edit(current);
-                JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("REGISTRADO SALIDA"));                
+                 JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsuarioRegistrado"));                
             }
             else{
                    LocalDateTime ob = LocalDateTime.now();                                   
                    current.setEntrada(convertToDateViaSqlTimestamp(ob));
                    current.setSalida(null);
                      getFacade().create(current);
-                 JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("REGISTRADO SALIDA"));                
+                 JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsuarioRegistrado"));                
             }
           
         }else{
@@ -106,12 +107,14 @@ private Usuario id;
                    current.setSalida(null);
                    current.setNoDia(null);
                      getFacade().create(current);
-                 JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("REGISTRADO SALIDA"));                
+                 JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("UsuarioRegistrado"));                
              
         }
         }
-      return "/paginas/admin/List";
-        
+        } catch (Exception e) {
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("UsuarioNoRegistrado"));    
+        } 
+      
     }
     
  public Date convertToDateViaSqlTimestamp(LocalDateTime dateToConvert) {

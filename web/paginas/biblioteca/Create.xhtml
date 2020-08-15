@@ -23,8 +23,7 @@
                     <h:inputText id="salida" value="#{bibliotecaController.selected.salida}" title="#{bundle.CreateBibliotecaTitle_salida}" required="true" requiredMessage="#{bundle.CreateBibliotecaRequiredMessage_salida}">
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateBibliotecaLabel_noEntrada}" for="noEntrada" />
-                    <h:inputText id="noEntrada" value="#{bibliotecaController.selected.noEntrada}" title="#{bundle.CreateBibliotecaTitle_noEntrada}" required="true" requiredMessage="#{bundle.CreateBibliotecaRequiredMessage_noEntrada}"/>
+                 
                     <h:outputLabel value="#{bundle.CreateBibliotecaLabel_id}" for="id" />
                     <h:selectOneMenu id="id" value="#{bibliotecaController.selected.id}" title="#{bundle.CreateBibliotecaTitle_id}" required="true" requiredMessage="#{bundle.CreateBibliotecaRequiredMessage_id}">
                         <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
@@ -37,7 +36,7 @@
                 <h:commandLink action="#{bibliotecaController.prepareList}" value="#{bundle.CreateBibliotecaShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateBibliotecaIndexLink}"/>
+                <h:link outcome="/paginas/admin/principal" value="#{bundle.CreateBibliotecaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
