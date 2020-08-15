@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditHorasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditHorasLabel_entrada}" for="entrada" />
+                    <h:inputText id="entrada" value="#{horasController.selected.entrada}" title="#{bundle.EditHorasTitle_entrada}" required="true" requiredMessage="#{bundle.EditHorasRequiredMessage_entrada}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditHorasLabel_salida}" for="salida" />
+                    <h:inputText id="salida" value="#{horasController.selected.salida}" title="#{bundle.EditHorasTitle_salida}" required="true" requiredMessage="#{bundle.EditHorasRequiredMessage_salida}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditHorasLabel_noDia}" for="noDia" />
+                    <h:inputText id="noDia" value="#{horasController.selected.noDia}" title="#{bundle.EditHorasTitle_noDia}" required="true" requiredMessage="#{bundle.EditHorasRequiredMessage_noDia}"/>
+                    <h:outputLabel value="#{bundle.EditHorasLabel_id}" for="id" />
+                    <h:selectOneMenu id="id" value="#{horasController.selected.id}" title="#{bundle.EditHorasTitle_id}" required="true" requiredMessage="#{bundle.EditHorasRequiredMessage_id}">
+                        <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{horasController.update}" value="#{bundle.EditHorasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditHorasViewLink}"/>
+                <br />
+                <h:commandLink action="#{horasController.prepareList}" value="#{bundle.EditHorasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditHorasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

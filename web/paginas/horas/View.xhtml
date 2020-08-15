@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewHorasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewHorasLabel_entrada}"/>
+                    <h:outputText value="#{horasController.selected.entrada}" title="#{bundle.ViewHorasTitle_entrada}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewHorasLabel_salida}"/>
+                    <h:outputText value="#{horasController.selected.salida}" title="#{bundle.ViewHorasTitle_salida}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewHorasLabel_noDia}"/>
+                    <h:outputText value="#{horasController.selected.noDia}" title="#{bundle.ViewHorasTitle_noDia}"/>
+                    <h:outputText value="#{bundle.ViewHorasLabel_id}"/>
+                    <h:outputText value="#{horasController.selected.id}" title="#{bundle.ViewHorasTitle_id}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{horasController.destroyAndView}" value="#{bundle.ViewHorasDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewHorasEditLink}"/>
+                <br />
+                <h:commandLink action="#{horasController.prepareCreate}" value="#{bundle.ViewHorasCreateLink}" />
+                <br />
+                <h:commandLink action="#{horasController.prepareList}" value="#{bundle.ViewHorasShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewHorasIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

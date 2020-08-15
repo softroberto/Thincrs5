@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <title>LOGIN</title>
+    </h:head>
+    <h:body>
+ 
+       <h:form>
+ 
+           <p:messages autoUpdate="true"/>
+           <p>ingrese su id </p>
+           <p:inputText id="id" required="true" requiredMessage="#{bundle.LoginAdmin_Id}" value="#{adminController.nombreUsaurio}"/>
+            <p>ingrese su password</p>
+            <p:inputText type="password" id="password" required="true" requiredMessage="#{bundle.LoginAdmin_Password}" value="#{adminController.password}"/>
+            <br/><br/>
+            <h:commandLink action="#{adminController.autenticar()}" value="ENTAR"/><br/>
+ </h:form>
+    </h:body>
+</html>
+

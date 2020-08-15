@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="03a00ab1-e76c-4907-b87c-024883e0d480">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     usuario.`id` AS usuario_id,
+     horas.`entrada` AS horas_entrada,
+     horas.`salida` AS horas_salida,
+     horas.`noDia` AS horas_noDia,
+     usuario.`nombre` AS usuario_nombre
+FROM
+     `usuario` usuario INNER JOIN `horas` horas ON usuario.`id` = horas.`id`]]>
+	</queryString>
+	<field name="usuario_id" class="java.lang.Integer"/>
+	<field name="horas_entrada" class="java.sql.Timestamp"/>
+	<field name="horas_salida" class="java.sql.Timestamp"/>
+	<field name="horas_noDia" class="java.lang.Integer"/>
+	<field name="usuario_nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="0" width="112" height="36" uuid="46ca031e-e7bf-4638-80cb-99db6aca771c"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[THINCRS]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="414" y="16" width="100" height="20" uuid="52190da2-39de-4da4-8c83-3cc16d9a0107"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="100" height="20" uuid="2f546c43-ce8e-4a2c-9497-f44989fde98c"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="7" width="100" height="20" uuid="05c9a4f0-c432-451c-9dd9-075960880c81"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="7" width="151" height="20" uuid="c25ea28f-9f2d-493c-a385-be4b363ec2eb"/>
+				<text><![CDATA[SALIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="7" width="151" height="20" uuid="265dc268-dd48-4da4-88ed-96b5908ac46f"/>
+				<text><![CDATA[ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="7" width="57" height="20" uuid="c055271d-4754-4f04-b9f1-aeeaea10b552"/>
+				<text><![CDATA[noREPORTE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="58" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="21" width="100" height="20" uuid="ba9af79e-89f1-42b8-a309-90737a0390b7"/>
+				<textFieldExpression><![CDATA[$F{usuario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="21" width="100" height="20" uuid="673d7640-5c49-4658-a727-b6085ec49d6e"/>
+				<textFieldExpression><![CDATA[$F{usuario_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="21" width="151" height="20" uuid="bbe7f05b-0798-46d9-afb2-04f9c12db571"/>
+				<textFieldExpression><![CDATA[$F{horas_salida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="21" width="151" height="20" uuid="0b9e74c6-9ebb-4df7-921d-657052f4f4a5"/>
+				<textFieldExpression><![CDATA[$F{horas_entrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="21" width="57" height="20" uuid="44fe2381-46bf-4248-bb69-9c58f5fc3eac"/>
+				<textFieldExpression><![CDATA[$F{horas_noDia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

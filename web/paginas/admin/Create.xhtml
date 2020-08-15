@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAdminTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAdminLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{adminController.selected.id}" title="#{bundle.CreateAdminTitle_id}" required="true" requiredMessage="#{bundle.CreateAdminRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateAdminLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{adminController.selected.nombre}" title="#{bundle.CreateAdminTitle_nombre}" required="true" requiredMessage="#{bundle.CreateAdminRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateAdminLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{adminController.selected.apellidos}" title="#{bundle.CreateAdminTitle_apellidos}" required="true" requiredMessage="#{bundle.CreateAdminRequiredMessage_apellidos}"/>
+                    <h:outputLabel value="#{bundle.CreateAdminLabel_contrasena}" for="contrasena" />
+                    <h:inputText id="contrasena" value="#{adminController.selected.contrasena}" title="#{bundle.CreateAdminTitle_contrasena}" required="true" requiredMessage="#{bundle.CreateAdminRequiredMessage_contrasena}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{adminController.create}" value="#{bundle.CreateAdminSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{adminController.prepareList}" value="#{bundle.CreateAdminShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAdminIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

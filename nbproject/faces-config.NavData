@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="paginas/biblioteca/Create.xhtml" x="866" y="103" zoom="true"/>
+        <Node id="index.xhtml" x="770" y="581" zoom="true"/>
+        <Node id="paginas/usuario/List.xhtml" x="838" y="229" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="759" y="639" zoom="true"/>
+        <Node id="paginas/biblioteca/List.xhtml" x="594" y="102" zoom="true"/>
+        <Node id="paginas/admin/login.xhtml" x="1071" y="327" zoom="true"/>
+        <Node id="paginas/admin/List.xhtml" x="292" y="324" zoom="true"/>
+        <Node id="paginas/usuario/Edit.xhtml" x="298" y="234" zoom="true"/>
+        <Node id="paginas/usuario/View.xhtml" x="29" y="235" zoom="true"/>
+        <Node id="paginas/admin/Create.xhtml" x="17" y="320" zoom="true"/>
+        <Node id="paginas/admin/View.xhtml" x="553" y="324" zoom="true"/>
+        <Node id="paginas/admin/Edit.xhtml" x="813" y="326" zoom="true"/>
+        <Node id="paginas/usuario/Create.xhtml" x="563" y="231" zoom="true"/>
+        <Node id="paginas/horas/List.xhtml" x="550" y="416" zoom="true"/>
+        <Node id="template.xhtml" x="777" y="532" zoom="true"/>
+        <Node id="paginas/horas/Create.xhtml" x="28" y="414" zoom="true"/>
+        <Node id="paginas/admin/principal.xhtml" x="1104" y="231" zoom="true"/>
+        <Node id="paginas/horas/Edit.xhtml" x="296" y="416" zoom="true"/>
+        <Node id="paginas/horas/View.xhtml" x="807" y="415" zoom="true"/>
+        <Node id="paginas/biblioteca/View.xhtml" x="24" y="100" zoom="true"/>
+        <Node id="paginas/biblioteca/Edit.xhtml" x="303" y="100" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
